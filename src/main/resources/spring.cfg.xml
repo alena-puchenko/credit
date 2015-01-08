@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <bean id="sessionBean"
+          class="com.puchenko.SessionBean"/>
+            
+    <bean id="userService"
+          class="com.puchenko.credit.service.implementation.UserServiceImplementation"/>
+    
+    <bean id="clientService"
+          class="com.puchenko.credit.service.implementation.ClientServiceImplementation"/>
+    
+    <bean id="loanService"
+          class="com.puchenko.credit.service.implementation.LoanServiceImplementation"/>
+
+    <bean id="linkService"
+              class="com.puchenko.credit.service.implementation.LinkServiceImplementation"/> 
+           
+    <bean id="statService"
+          class="com.puchenko.credit.service.implementation.StatServiceImplementation"/>
+
+</beans>
