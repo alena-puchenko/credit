@@ -39,7 +39,7 @@
             <form class="form-signin" method="GET" action="/credit/webresources/links/create">
                 <input name = "paramCustomerName" type="text" id="login" class="form-control" placeholder="customer">   
                 <br>
-                <input name = "paramInsuranceName" type="text" id="name" class="form-control" placeholder="insurance">
+                <input name = "paramInsuranceName" type="text" id="name" class="form-control" placeholder="loan">
                 <br>
                 <input name = "paramPercent" type="text" id="name" class="form-control" placeholder="percent">
                 <br>
@@ -50,7 +50,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-plus"></span> Create new link
+                                <span class="glyphicon glyphicon-plus"></span> Create new credit
                             </button>
                             </form>
                         </td>
