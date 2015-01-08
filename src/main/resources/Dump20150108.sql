@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `INSURANCE` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `INSURANCE`;
+CREATE DATABASE  IF NOT EXISTS `CREDIT` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `CREDIT`;
 -- MySQL dump 10.13  Distrib 5.5.40, for debian-linux-gnu (i686)
 --
--- Host: 127.0.0.1    Database: INSURANCE
+-- Host: 127.0.0.1    Database: CREDIT
 -- ------------------------------------------------------
 -- Server version	5.5.40-0ubuntu0.14.04.1
 
@@ -18,13 +18,13 @@ USE `INSURANCE`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `CUSTOMER`
+-- Table structure for table `CLIENT`
 --
 
-DROP TABLE IF EXISTS `CUSTOMER`;
+DROP TABLE IF EXISTS `CLIENT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CUSTOMER` (
+CREATE TABLE `CLIENT` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(255) DEFAULT NULL,
   `DATE` date DEFAULT NULL,
@@ -34,38 +34,13 @@ CREATE TABLE `CUSTOMER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CUSTOMER`
+-- Dumping data for table `CLIENT`
 --
 
-LOCK TABLES `CUSTOMER` WRITE;
-/*!40000 ALTER TABLE `CUSTOMER` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CUSTOMER` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `INSURANCE`
---
-
-DROP TABLE IF EXISTS `INSURANCE`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `INSURANCE` (
-  `ID` int(11) NOT NULL,
-  `NAME` varchar(255) DEFAULT NULL,
-  `PRICE` int(11) DEFAULT NULL,
-  `DATE` date DEFAULT NULL,
-  `USER_ID` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `INSURANCE`
---
-
-LOCK TABLES `INSURANCE` WRITE;
-/*!40000 ALTER TABLE `INSURANCE` DISABLE KEYS */;
-/*!40000 ALTER TABLE `INSURANCE` ENABLE KEYS */;
+LOCK TABLES `CLIENT` WRITE;
+/*!40000 ALTER TABLE `CLIENT` DISABLE KEYS */;
+INSERT INTO `CLIENT` VALUES (1,'Ivan Dorn','2015-01-08',1);
+/*!40000 ALTER TABLE `CLIENT` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -80,6 +55,7 @@ CREATE TABLE `LINK` (
   `CUSTOMER_ID` int(11) DEFAULT NULL,
   `SOFTWARE_ID` int(11) DEFAULT NULL,
   `USER_ID` int(11) DEFAULT NULL,
+  `PERCENT` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -90,7 +66,34 @@ CREATE TABLE `LINK` (
 
 LOCK TABLES `LINK` WRITE;
 /*!40000 ALTER TABLE `LINK` DISABLE KEYS */;
+INSERT INTO `LINK` VALUES (1,1,1,1,'75'),(2,1,2,1,'90');
 /*!40000 ALTER TABLE `LINK` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `LOAN`
+--
+
+DROP TABLE IF EXISTS `LOAN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `LOAN` (
+  `ID` int(11) NOT NULL,
+  `NAME` varchar(255) DEFAULT NULL,
+  `DATE` date DEFAULT NULL,
+  `USER_ID` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `LOAN`
+--
+
+LOCK TABLES `LOAN` WRITE;
+/*!40000 ALTER TABLE `LOAN` DISABLE KEYS */;
+INSERT INTO `LOAN` VALUES (1,'Loan for business','2015-01-08','1'),(2,'Loan for home','2015-01-08','1');
+/*!40000 ALTER TABLE `LOAN` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -114,6 +117,7 @@ CREATE TABLE `STAT` (
 
 LOCK TABLES `STAT` WRITE;
 /*!40000 ALTER TABLE `STAT` DISABLE KEYS */;
+INSERT INTO `STAT` VALUES (1,'2015-01-08','User Alena Puchenko create a new client with id: 1'),(2,'2015-01-08','User Alena Puchenko create a new loan with id: 1'),(3,'2015-01-08','User Alena Puchenko create a new loan with id: 2'),(4,'2015-01-08','User Alena Puchenko create a new link with id: 1'),(5,'2015-01-08','User Alena Puchenko create a new link with id: 2'),(6,'2015-01-08','User Alena Puchenko create a new user with id: 2');
 /*!40000 ALTER TABLE `STAT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +145,7 @@ CREATE TABLE `USER` (
 
 LOCK TABLES `USER` WRITE;
 /*!40000 ALTER TABLE `USER` DISABLE KEYS */;
-INSERT INTO `USER` VALUES (1,'Julia Titova','julia','pass','2015-01-03','admin');
+INSERT INTO `USER` VALUES (1,'Alena Puchenko','alena','pass','2015-01-08','admin'),(2,'Sally Shapiro','sally','pass','2015-01-08','user');
 /*!40000 ALTER TABLE `USER` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -154,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-07 19:00:39
+-- Dump completed on 2015-01-08 14:29:17
