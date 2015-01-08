@@ -70,15 +70,15 @@ public class AppTest {
         // Client service test. -----------------------------------------------       
         System.out.println("Customer service test.");
         ClientService clientService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
-        Client customer = new Client();
-        customer.setId(0);
-        customer.setName("Client test");
-        customer.setDate(new Date());
+        Client client = new Client();
+        client.setId(0);
+        client.setName("Client test");
+        client.setDate(new Date());
 
-        clientService.createClient(customer);
-        System.out.println("create client done. Client id: " + customer.getId());
+        clientService.createClient(client);
+        System.out.println("create client done. Client id: " + client.getId());
 
-        clientService.deleteClient(customer);
+        clientService.deleteClient(client);
         System.out.println("Delete client done!");
         
         
@@ -93,7 +93,7 @@ public class AppTest {
         loan.setUserId(1);
 
         loanService.createLoan(loan);
-        System.out.println("create loan done. loan id: " + customer.getId());
+        System.out.println("create loan done. loan id: " + client.getId());
 
         loanService.deleteLoan(loan);
         System.out.println("Delete loan done!");
