@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Credits's operations menu</h3>
+            <h3>Система оценки кредитоспособности клиентов. Операции кредитов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -37,11 +37,11 @@
             <br>
 
             <form class="form-signin" method="GET" action="/credit/webresources/links/create">
-                <input name = "paramCustomerName" type="text" id="login" class="form-control" placeholder="customer">   
+                <input name = "paramCustomerName" type="text" id="login" class="form-control" placeholder="заказчик">   
                 <br>
-                <input name = "paramInsuranceName" type="text" id="name" class="form-control" placeholder="loan">
+                <input name = "paramInsuranceName" type="text" id="name" class="form-control" placeholder="займ">
                 <br>
-                <input name = "paramPercent" type="text" id="name" class="form-control" placeholder="percent">
+                <input name = "paramPercent" type="text" id="name" class="form-control" placeholder="процент выплат">
                 <br>
                 <br>
 
@@ -50,7 +50,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-plus"></span> Create new credit
+                                <span class="glyphicon glyphicon-plus"></span> Создать кредит
                             </button>
                             </form>
                         </td>
@@ -61,7 +61,7 @@
                         <td>
                             <form action="credits-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to credit menu
+                                    <span class="glyphicon glyphicon-user"></span> В меню кредитов
                                 </button>
                             </form>
                         </td>

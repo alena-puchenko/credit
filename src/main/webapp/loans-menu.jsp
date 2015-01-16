@@ -21,7 +21,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Loans menu</h3>
+            <h3>Система оценки кредитоспособности клиентов. Меню займов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,10 +44,10 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Money</th>
+                    <th>Номер</th>
+                    <th>Имя</th>
+                    <th>Дата</th>
+                    <th>Стоимость</th>
                 </tr>
                 <%
                     LoanService loanService = (LoanService) SpringFactory.getspringApplicationContext().getBean("loanService");
@@ -92,7 +92,7 @@
                     <td>
                         <form action="loans-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-sort"></span> Loans operations
+                                <span class="glyphicon glyphicon-sort"></span> Операции займов
                             </button>
                         </form>
                     </td>
@@ -102,7 +102,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> В главное меню
                             </button>
                         </form>
                     </td>

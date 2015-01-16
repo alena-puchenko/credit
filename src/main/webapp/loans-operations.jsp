@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Loans operations menu</h3>
+            <h3>Система оценки кредитоспособности клиентов. Операции займов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -36,8 +36,8 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/credit/webresources/loans/create">
-                <input name = "paramName" type="text" id="name" class="form-control" placeholder="name">
-                <input name = "paramMoney" type="text" id="name" class="form-control" placeholder="money">
+                <input name = "paramName" type="text" id="name" class="form-control" placeholder="название">
+                <input name = "paramMoney" type="text" id="name" class="form-control" placeholder="стоимость">
                 <br>          
 
                 <table>
@@ -45,7 +45,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-sort"></span> Create new loan
+                                <span class="glyphicon glyphicon-sort"></span> Создать займ
                             </button>
                             </form>
                         </td>
@@ -56,7 +56,7 @@
                         <td>
                             <form action="loans-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-sort"></span> Back to loans menu
+                                    <span class="glyphicon glyphicon-sort"></span> В меню займов
                                 </button>
                             </form>
                         </td>

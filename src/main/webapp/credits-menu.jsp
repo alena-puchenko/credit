@@ -24,7 +24,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Credits rating menu</h3>
+            <h3>Система оценки кредитоспособности клиентов. Меню кредитов и рейтингов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -49,11 +49,11 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Credit id</th>
-                    <th>Customer</th>
-                    <th>Loan</th>
-                    <th>Percent</th>
-                    <th>Money</th>
+                    <th>Номер</th>
+                    <th>Заказчик</th>
+                    <th>Займ</th>
+                    <th>Процент выплат</th>
+                    <th>Деньги</th>
                 </tr>
                 <%
                     ClientService clientService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
@@ -80,7 +80,7 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Client in list number: " + i + "</td>");
+                            out.write("<td>" + "Заказчик в списке №: " + i + "</td>");
                             out.write("</tr>");
 
                             // Out a cell with current project id
@@ -111,8 +111,8 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Total percent " + totalBalancePercent + "</td>");
-                            out.write("<td>" + "Total money " + totalBalanceMoney + "</td>");
+                            out.write("<td>" + "Итого проценты: " + totalBalancePercent + "</td>");
+                            out.write("<td>" + "Итого сумма: " + totalBalanceMoney + "</td>");
                             out.write("</tr>");
 
                         }
@@ -128,7 +128,7 @@
                     <td>
                         <form action="credits-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-bullhorn"></span> Credits operations
+                                <span class="glyphicon glyphicon-bullhorn"></span> Операции кредитов
                             </button>
                         </form>
                     </td>
@@ -138,7 +138,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> В главное меню
                             </button>
                         </form>
                     </td>

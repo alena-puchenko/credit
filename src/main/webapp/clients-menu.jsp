@@ -20,7 +20,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Система оценки кредитоспособности клиентов. Меню клиентов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,10 +44,10 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Client id</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Income</th>
+                    <th>Номер</th>
+                    <th>Имя</th>
+                    <th>Дата</th>
+                    <th>Доход</th>
                 </tr>
                 <%
                     ClientService clientService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
@@ -98,7 +98,7 @@
                     <td>
                         <form action="clients-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> Clients operations
+                                <span class="glyphicon glyphicon-user"></span> Операции клиентов
                             </button>
                         </form>
                     </td>
@@ -108,7 +108,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> В главное меню
                             </button>
                         </form>
                     </td>

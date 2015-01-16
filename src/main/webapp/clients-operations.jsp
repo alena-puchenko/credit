@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Clients operations menu</h3>
+            <h3>Система оценки кредитоспособности клиентов. Операции клиентов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -36,8 +36,8 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/credit/webresources/clients/create">
-                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name"> 
-                <input name = "paramIncome" type="text" id="login" class="form-control" placeholder="income"> 
+                <input name = "paramName" type="text" id="login" class="form-control" placeholder="имя"> 
+                <input name = "paramIncome" type="text" id="login" class="form-control" placeholder="доход"> 
                 <br>          
 
                 <table>
@@ -45,7 +45,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> Create new client
+                                <span class="glyphicon glyphicon-user"></span> Создать клиента
                             </button>
                             </form>
                         </td>
@@ -56,7 +56,7 @@
                         <td>
                             <form action="clients-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to clients menu
+                                    <span class="glyphicon glyphicon-user"></span> В меню клиентов
                                 </button>
                             </form>
                         </td>
