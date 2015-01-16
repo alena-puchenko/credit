@@ -13,23 +13,23 @@ import org.hibernate.annotations.GenericGenerator;
 public class Link {
     
     private int id;
-    private int customerId;
-    private int softwareId;
+    private int clientId;
+    private int linkId;
     private int userId;
     private int percent;
     
     public Link() {
         id = 0;
-        customerId = 0;
-        softwareId = 0;
+        clientId = 0;
+        linkId = 0;
         userId = 0;
         percent = 0;
     }
     
     public Link(int customerId, int softwareId, int userId, int percent){
         id = 0;
-        this.customerId = customerId;
-        this.softwareId = softwareId;
+        this.clientId = customerId;
+        this.linkId = softwareId;
         this.userId = userId;
         this.percent = percent;
     }
@@ -46,22 +46,22 @@ public class Link {
         this.id = id;
     }
 
-    @Column(name = "CUSTOMER_ID")
-    public int getCustomerId() {
-        return customerId;
+    @Column(name = "CLIENT_ID")
+    public int getClientId() {
+        return clientId;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
     }
 
-    @Column(name = "SOFTWARE_ID")
-    public int getSoftwareId() {
-        return softwareId;
+    @Column(name = "LOAN_ID")
+    public int getLinkId() {
+        return linkId;
     }
 
-    public void setSoftwareId(int softwareId) {
-        this.softwareId = softwareId;
+    public void setLinkId(int linkId) {
+        this.linkId = linkId;
     }
     
     @Column(name = "USER_ID")

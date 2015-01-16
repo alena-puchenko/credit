@@ -72,6 +72,7 @@ public class AppTest {
         ClientService clientService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
         Client client = new Client();
         client.setId(0);
+        client.setIncome(1000);
         client.setName("Client test");
         client.setDate(new Date());
 
@@ -89,6 +90,7 @@ public class AppTest {
         Loan loan = new Loan();
         loan.setId(0);
         loan.setName("Loan test");
+        loan.setMoney(1000);
         loan.setDate(new Date());
         loan.setUserId(1);
 

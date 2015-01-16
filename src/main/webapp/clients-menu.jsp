@@ -47,6 +47,7 @@
                     <th>Client id</th>
                     <th>Name</th>
                     <th>Date</th>
+                    <th>Income</th>
                 </tr>
                 <%
                     ClientService clientService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
@@ -78,6 +79,9 @@
                                 String date = sdf.format(clientDate);
                                 out.write("<td>" + date + "</td>");
                             }
+                            
+                            Integer clientIncome = client.getIncome();
+                            out.write("<td>" + clientIncome + "</td>");
 
                             out.write("</tr>");
                         }

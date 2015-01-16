@@ -19,6 +19,7 @@ public class Loan {
     private String name;
     private Date date;
     private int userId;
+    private int money;
     
     public Loan(){
         id = 0;
@@ -72,5 +73,16 @@ public class Loan {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+    @Column (name="MONEY")     
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+    
+    
     
 }

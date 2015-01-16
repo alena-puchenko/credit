@@ -23,7 +23,7 @@ public class LoansController {
     @GET
     @Path("create")
     @Produces("text/html")
-    public Response create(@QueryParam("paramName") String name) {
+    public Response create(@QueryParam("paramName") String name, @QueryParam("paramMoney") Integer money) {
         java.net.URI location = null;
 
         try {
@@ -33,6 +33,7 @@ public class LoansController {
             Loan insurance = new Loan();
             insurance.setId(0);
             insurance.setName(name);
+            insurance.setMoney(money);
             insurance.setDate(new Date());
             insurance.setUserId(currentUser.getId());
 

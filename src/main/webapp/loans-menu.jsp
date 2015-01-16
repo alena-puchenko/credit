@@ -47,6 +47,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Date</th>
+                    <th>Money</th>
                 </tr>
                 <%
                     LoanService loanService = (LoanService) SpringFactory.getspringApplicationContext().getBean("loanService");
@@ -74,6 +75,7 @@
                                 out.write("<td>" + date + "</td>");
                             }
 
+                            out.write("<td>" + loan.getMoney() + "</td>");  
                             out.write("</tr>");
                         }
 

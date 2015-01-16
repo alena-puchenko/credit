@@ -75,7 +75,7 @@ public class LinkServiceImplementation implements LinkService{
         for (int i = 0; i < linksList.size(); i++){
             Link link = (Link) linksList.get(i);
             if (link != null){
-                if (link.getCustomerId() == customerId){
+                if (link.getClientId() == customerId){
                     customerLinksList.add(link);
                 }    
             }

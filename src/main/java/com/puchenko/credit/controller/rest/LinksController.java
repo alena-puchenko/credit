@@ -41,13 +41,13 @@ public class LinksController {
             ClientService customerService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
             Client customer = customerService.getClientByName(projectName);
             if (customer != null){
-                link.setCustomerId(customer.getId());
+                link.setClientId(customer.getId());
             }
 
             LoanService insuranceService = (LoanService) SpringFactory.getspringApplicationContext().getBean("loanService");
-            Loan insurance = insuranceService.getLoanByName(insuranceName);
-            if (insurance != null){
-                link.setSoftwareId(insurance.getId());
+            Loan loan = insuranceService.getLoanByName(insuranceName);
+            if (loan != null){
+                link.setLinkId(loan.getId());
             }
 
             link.setUserId(currentUserId);
@@ -62,9 +62,25 @@ public class LinksController {
             stat.setDate(new Date());
             
             StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
-            statService.createStat(stat);
-
-            location = new java.net.URI("../credits-menu.jsp");
+            
+            // Additional logic formoney... ------------------------------------
+            Integer currentBalance = customer.getIncome();
+            Integer currentPrice = loan.getMoney();
+            
+            if (currentBalance >= currentPrice){
+                currentBalance -= currentPrice;
+                customerService.updateClient(customer);
+                
+                statService.createStat(stat);
+                location = new java.net.URI("../credits-menu.jsp");
+            } else {
+                location = new java.net.URI("../money-low.html");    
+            }
+            
+            // -----------------------------------------------------------------
+//            statService.createStat(stat);
+//
+//            location = new java.net.URI("../credits-menu.jsp");
 
         } catch (URISyntaxException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);

@@ -11,11 +11,11 @@
         <script src="resources/js/bootstrap.min.js"></script>
         <link href="resources/css/credit.css" rel="stylesheet">
 
-        <title>Links operations page</title>
+        <title>Credits operations page</title>
     </head>
     <body>
         <div class="container">
-            <h3>Link's operations menu</h3>
+            <h3>Credits's operations menu</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -61,7 +61,7 @@
                         <td>
                             <form action="credits-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to link menu
+                                    <span class="glyphicon glyphicon-user"></span> Back to credit menu
                                 </button>
                             </form>
                         </td>

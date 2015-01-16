@@ -36,7 +36,8 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/credit/webresources/clients/create">
-                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name">   
+                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name"> 
+                <input name = "paramIncome" type="text" id="login" class="form-control" placeholder="income"> 
                 <br>          
 
                 <table>

@@ -29,6 +29,7 @@ CREATE TABLE `CLIENT` (
   `NAME` varchar(255) DEFAULT NULL,
   `DATE` date DEFAULT NULL,
   `USER_ID` int(11) DEFAULT NULL,
+  `INCOME` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,7 +40,7 @@ CREATE TABLE `CLIENT` (
 
 LOCK TABLES `CLIENT` WRITE;
 /*!40000 ALTER TABLE `CLIENT` DISABLE KEYS */;
-INSERT INTO `CLIENT` VALUES (1,'Ivan Dorn','2015-01-08',1);
+INSERT INTO `CLIENT` VALUES (1,'Jennifer Aniston','2015-01-08',1,'10000'),(2,'Courtney Cox','2015-01-08',1,'5000'),(3,'Client by Sally','2015-01-08',2,'2500'),(4,'Gabriel Logan','2015-01-17',1,'15000');
 /*!40000 ALTER TABLE `CLIENT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,10 +53,11 @@ DROP TABLE IF EXISTS `LINK`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `LINK` (
   `ID` int(11) NOT NULL,
-  `CUSTOMER_ID` int(11) DEFAULT NULL,
-  `SOFTWARE_ID` int(11) DEFAULT NULL,
+  `CLIENT_ID` int(11) DEFAULT NULL,
+  `LOAN_ID` int(11) DEFAULT NULL,
   `USER_ID` int(11) DEFAULT NULL,
   `PERCENT` varchar(45) DEFAULT NULL,
+  `MONEY` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -66,7 +68,7 @@ CREATE TABLE `LINK` (
 
 LOCK TABLES `LINK` WRITE;
 /*!40000 ALTER TABLE `LINK` DISABLE KEYS */;
-INSERT INTO `LINK` VALUES (1,1,1,1,'75'),(2,1,2,1,'90');
+INSERT INTO `LINK` VALUES (1,1,1,1,'65',NULL),(2,1,2,1,'85',NULL),(3,2,2,1,'95',NULL),(4,1,3,1,'100',NULL),(5,1,3,1,'100',NULL);
 /*!40000 ALTER TABLE `LINK` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,6 +84,7 @@ CREATE TABLE `LOAN` (
   `NAME` varchar(255) DEFAULT NULL,
   `DATE` date DEFAULT NULL,
   `USER_ID` varchar(255) DEFAULT NULL,
+  `MONEY` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -92,7 +95,7 @@ CREATE TABLE `LOAN` (
 
 LOCK TABLES `LOAN` WRITE;
 /*!40000 ALTER TABLE `LOAN` DISABLE KEYS */;
-INSERT INTO `LOAN` VALUES (1,'Loan for business','2015-01-08','1'),(2,'Loan for home','2015-01-08','1');
+INSERT INTO `LOAN` VALUES (1,'Loan for home','2015-01-08','1',1000),(2,'Loan for business','2015-01-08','1',25000),(3,'Loan for study','2015-01-17','1',15000);
 /*!40000 ALTER TABLE `LOAN` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +120,7 @@ CREATE TABLE `STAT` (
 
 LOCK TABLES `STAT` WRITE;
 /*!40000 ALTER TABLE `STAT` DISABLE KEYS */;
-INSERT INTO `STAT` VALUES (1,'2015-01-08','User Alena Puchenko create a new client with id: 1'),(2,'2015-01-08','User Alena Puchenko create a new loan with id: 1'),(3,'2015-01-08','User Alena Puchenko create a new loan with id: 2'),(4,'2015-01-08','User Alena Puchenko create a new link with id: 1'),(5,'2015-01-08','User Alena Puchenko create a new link with id: 2'),(6,'2015-01-08','User Alena Puchenko create a new user with id: 2');
+INSERT INTO `STAT` VALUES (1,'2015-01-08','User Alena Puchenko create a new client with id: 1'),(2,'2015-01-08','User Alena Puchenko create a new client with id: 2'),(3,'2015-01-08','User Alena Puchenko create a new loan with id: 1'),(4,'2015-01-08','User Alena Puchenko create a new loan with id: 2'),(5,'2015-01-08','User Alena Puchenko create a new link with id: 1'),(6,'2015-01-08','User Alena Puchenko create a new link with id: 2'),(7,'2015-01-08','User Alena Puchenko create a new link with id: 3'),(8,'2015-01-08','User Alena Puchenko create a new user with id: 2'),(9,'2015-01-08','User Sally Shapiro create a new client with id: 3'),(10,'2015-01-17','User Alena Puchenko create a new client with id: 4'),(11,'2015-01-17','User Alena Puchenko create a new loan with id: 3');
 /*!40000 ALTER TABLE `STAT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-08 14:29:17
+-- Dump completed on 2015-01-17  2:01:20

@@ -37,6 +37,7 @@
             <br>
             <form class="form-signin" method="GET" action="/credit/webresources/loans/create">
                 <input name = "paramName" type="text" id="name" class="form-control" placeholder="name">
+                <input name = "paramMoney" type="text" id="name" class="form-control" placeholder="money">
                 <br>          
 
                 <table>
@@ -55,7 +56,7 @@
                         <td>
                             <form action="loans-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-heart"></span> Back to loans menu
+                                    <span class="glyphicon glyphicon-sort"></span> Back to loans menu
                                 </button>
                             </form>
                         </td>

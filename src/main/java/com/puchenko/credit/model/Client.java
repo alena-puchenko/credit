@@ -18,6 +18,7 @@ public class Client {
     private String name;
     private Date date;
     private int userId;
+    private int income;
 
     public Client() {
         id = 0;
@@ -72,6 +73,17 @@ public class Client {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+    @Column(name = "INCOME")
+    public int getIncome() {
+        return income;
+    }
+
+    public void setIncome(int income) {
+        this.income = income;
+    }
+    
+    
     
     
 }

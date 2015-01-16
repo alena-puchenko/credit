@@ -53,6 +53,7 @@
                     <th>Customer</th>
                     <th>Loan</th>
                     <th>Percent</th>
+                    <th>Money</th>
                 </tr>
                 <%
                     ClientService clientService = (ClientService) SpringFactory.getspringApplicationContext().getBean("clientService");
@@ -71,7 +72,7 @@
                             for (int b = 0; b < linksList.size() - 1; b++) {
                                 for (int a = 1; a < linksList.size() - b; a++) {
                                     Link tempLink = linksList.get(a);
-                                    if (tempLink.getSoftwareId() < linksList.get(a - 1).getSoftwareId()) {
+                                    if (tempLink.getLinkId()< linksList.get(a - 1).getLinkId()) {
                                         linksList.set(a, linksList.get(a - 1));
                                         linksList.set(a - 1, tempLink);
                                     }
@@ -83,31 +84,35 @@
                             out.write("</tr>");
 
                             // Out a cell with current project id
-                            Integer totalBalance = 0;
+                            Integer totalBalancePercent = 0;
+                            Integer totalBalanceMoney = 0;
                             for (int j = 0; j < linksList.size(); j++) {
                                 Link link = linksList.get(j);
                                 if (link != null){
                                 out.write("<tr>");
 
                                 out.write("<td>" + link.getId() + "</td>");
-                                Client tempClient = clientService.readClient(link.getCustomerId());
+                                Client tempClient = clientService.readClient(link.getClientId());
                                 out.write("<td>" + tempClient.getName() + "</td>");
 
                                 LoanService loanService = (LoanService) SpringFactory.getspringApplicationContext().getBean("loanService");
-                                Integer loanId = link.getSoftwareId();
+                                Integer loanId = link.getLinkId();
                                 Loan tempLoan = loanService.readLoan(loanId);
                                 out.write("<td>" + tempLoan.getName() + "</td>");
-                                out.write("<td>" + link.getPercent() + "</td>");                                
+                                out.write("<td>" + link.getPercent() + "</td>");
+                                out.write("<td>" + tempLoan.getMoney() + "</td>");
 
-                                totalBalance = totalBalance + link.getPercent();
+                                totalBalancePercent = totalBalancePercent + link.getPercent();
+                                totalBalanceMoney = totalBalanceMoney + tempLoan.getMoney();
                                 if (j > 0){
-                                    totalBalance = totalBalance / (j + 1);
+                                    totalBalancePercent = totalBalancePercent / (j + 1);
                                 }
                                 }
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Total percent " + totalBalance + "</td>");
+                            out.write("<td>" + "Total percent " + totalBalancePercent + "</td>");
+                            out.write("<td>" + "Total money " + totalBalanceMoney + "</td>");
                             out.write("</tr>");
 
                         }

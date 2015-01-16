@@ -23,7 +23,7 @@ public class ClientsController {
     @GET
     @Path("create")
     @Produces("text/html")
-    public Response create(@QueryParam("paramName") String name) {
+    public Response create(@QueryParam("paramName") String name, @QueryParam("paramIncome") Integer income) {
         java.net.URI location = null;
 
         try {
@@ -33,6 +33,7 @@ public class ClientsController {
             Client client = new Client();
             client.setId(0);
             client.setName(name);
+            client.setIncome(income);
             client.setDate(new Date());
             client.setUserId(currentUser.getId());
 
